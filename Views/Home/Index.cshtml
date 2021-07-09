@@ -1,8 +1,35 @@
-﻿@{
+﻿@model IEnumerable<Person>
+@{
     ViewData["Title"] = "Home Page";
 }
 
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">
+        Persons
+    </h1>
 </div>
+<div class="div-table">
+    <div class="div-table-row-header">
+        <div class="div-table-col1">Id</div>
+        <div class="div-table-col">Person Name</div>
+        <div class="div-table-col">Date of Birth</div>
+        <div class="div-table-col">Date Created</div>
+        <div class="div-table-col">View</div>
+
+    </div>
+    @foreach (var p in Model)
+    {
+        <div class="div-table-row">
+            <div class="div-table-col1">@p.Id</div>
+            <div class="div-table-col">@p.Forename @p.Surname</div>
+            <div class="div-table-col">@p.DOB</div>
+            <div class="div-table-col">@p.CreatedDate</div>
+            <div class="div-table-col">@Html.ActionLink("View Events", "ViewPersonEvents", new { id = p.Id })</div>
+
+        </div>
+    }
+
+
+</div>
+

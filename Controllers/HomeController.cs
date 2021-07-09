@@ -25,7 +25,8 @@ namespace PotentialX.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            DBController dbController = new DBController(Config);
+            return View(dbController.GetPeople());
         }
 
         public IActionResult Privacy()
