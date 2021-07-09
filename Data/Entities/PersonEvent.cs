@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace PotentialX.Data.Entities
 {
-    public class PersonEvents
+    public class PersonEvent
     {
         public int Id { get; set; }
         public string Forename { get; set; }
