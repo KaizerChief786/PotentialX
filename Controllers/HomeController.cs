@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using PotentialX.Models;
 using System;
@@ -12,10 +13,14 @@ namespace PotentialX.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IConfiguration Configuration;
+        private string Config;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IConfiguration config)
         {
             _logger = logger;
+            Configuration = config;
+            Config = Microsoft.Extensions.Configuration.ConfigurationExtensions.GetConnectionString(Configuration, "DefaultConnection");
         }
 
         public IActionResult Index()
