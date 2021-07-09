@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using PotentialX.Data;
 using PotentialX.Models;
 using System;
 using System.Collections.Generic;
