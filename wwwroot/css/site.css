@@ -91,11 +91,20 @@ body {
     display: table-row;
     width: auto;
     clear: both;
+    font-style: italic;
+    font-weight: bold;
 }
 
 .div-table-col {
     float: left; /* fix for  buggy browsers */
     display: table-column;
     width: 200px;
+    background-color: #fff;
+}
+
+.div-table-col1 {
+    float: left; /* fix for  buggy browsers */
+    display: table-column;
+    width: 70px;
     background-color: #fff;
 }

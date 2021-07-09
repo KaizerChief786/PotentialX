@@ -2,36 +2,44 @@
 @{
     ViewData["Title"] = "View Person Events";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Person Events</h1>
-</div>
-<div class="div-table">
-    <div class="div-table-row-header">
-        <div class="div-table-col1">Event Id</div>
-        <div class="div-table-col">Person Name</div>
-        <div class="div-table-col">Date of Birth</div>
-        <div class="div-table-col">Event Date</div>
-        <div class="div-table-col">Event Type</div>
-        <div class="div-table-col">Event Description</div>
-
+<script type="text/javascript">
+    function timedRefresh(timeoutPeriod) {
+        setTimeout(function () {
+            location.reload(true);
+        }, timeoutPeriod);
+    }
+</script>
+<body onload="JavaScript:timedRefresh(5000);">
+    <div class="text-center">
+        <h1 class="display-4">Person Events</h1>
+        <p>Updated: @DateTime.Now.ToString()</p>
     </div>
-    @foreach (var p in Model)
-    {
-        <div class="div-table-row">
-            <div class="div-table-col1">@p.Id</div>
-            <div class="div-table-col">@p.Forename @p.Surname</div>
-            <div class="div-table-col">@p.DOB</div>
-            <div class="div-table-col">@p.EventDate</div>
-            <div class="div-table-col">@p.EventType</div>
-            <div class="div-table-col">@p.EventDescription</div>
+    <div class="div-table">
+        <div class="div-table-row-header">
+            <div class="div-table-col1">Event Id</div>
+            <div class="div-table-col">Person Name</div>
+            <div class="div-table-col">Date of Birth</div>
+            <div class="div-table-col">Event Date</div>
+            <div class="div-table-col">Event Type</div>
+            <div class="div-table-col">Event Description</div>
 
         </div>
-    }
+        @foreach (var p in Model)
+        {
+            <div class="div-table-row">
+                <div class="div-table-col1">@p.Id</div>
+                <div class="div-table-col">@p.Forename @p.Surname</div>
+                <div class="div-table-col">@p.DOB</div>
+                <div class="div-table-col">@p.EventDate</div>
+                <div class="div-table-col">@p.EventType</div>
+                <div class="div-table-col">@p.EventDescription</div>
+
+            </div>
+        }
 
 
-</div>
-
+    </div>
+</body>
 
 
 

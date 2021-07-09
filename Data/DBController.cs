@@ -47,14 +47,14 @@ namespace PotentialX.Data
             List<PersonEvent> personEvents = new List<PersonEvent>();
             using (SqlConnection dbconn = new SqlConnection(DBConnection))
             {
-                string query = @"SELECT TOP (1000) a.[Id]
+                string query = @"SELECT a.[Id]
                     , a.[Forename]
                     ,a.[Surname]
                     ,a.[DOB]
                     ,a.[EventType]
                     ,a.[EventDescription]
                     ,a.[EventDate]
-                     FROM[PotentialX].[dbo].[PersonEvents] a ,[PotentialX].[dbo].[Persons] b
+                     FROM [dbo].[PersonEvents] a , [dbo].[Persons] b
                     where b.Id = @Id
                     and a.Forename = b.Forename
                     and a.Surname = b.Surname
