@@ -40,5 +40,11 @@ namespace PotentialX.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult ViewPersonEvents(int id)
+        {
+            DBController dbController = new DBController(Config);
+            return View(dbController.GetPersonEvents(id));
+        }
     }
 }
